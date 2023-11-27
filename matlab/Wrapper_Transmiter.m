@@ -1,0 +1,9 @@
+function packet = Wrapper_Transmiter( ...
+    pam_levels, ...
+    hadamard_size, ...
+    input_data)
+
+    transmited_data = Transmiter(pam_levels, hadamard_size, input_data);
+    crc = CRC_Encoder(transmited_data); % making CRC
+    packet = [transmited_data, crc]; % making packet
+end
